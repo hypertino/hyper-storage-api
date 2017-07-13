@@ -5,12 +5,12 @@ types:
   HyperStorageTransaction:
     type: object
     properties:
-      transactionId: string
+      transaction_id: string
 
   HyperStorageTransactionCreated:
     type: object
     properties:
-      transactionId: string
+      transaction_id: string
       path: string
 
   HyperStorageIndexSortOrder:
@@ -22,28 +22,28 @@ types:
   HyperStorageIndexSortItem:
     type: object
     properties:
-      fieldName: string
-      fieldType?: HyperStorageIndexSortFieldType
+      field_name: string
+      field_type?: HyperStorageIndexSortFieldType
       order?: HyperStorageIndexSortOrder
 
   HyperStorageIndex:
     type: object
     properties:
-      indexId: string
-      sortBy: HyperStorageIndexSortItem[]
-      filterBy?: string
+      index_id: string
+      sort_by: HyperStorageIndexSortItem[]
+      filter_by?: string
 
   HyperStorageIndexNew:
     type: object
     properties:
-      indexId?: string
-      sortBy: HyperStorageIndexSortItem[]
-      filterBy?: string
+      index_id?: string
+      sort_by: HyperStorageIndexSortItem[]
+      filter_by?: string
 
   HyperStorageIndexCreated:
     type: object
     properties:
-      indexId: string
+      index_id: string
       path: string
 
 /content/{path}:
@@ -51,7 +51,7 @@ types:
     path: string
   get:
     queryParameters:
-      sortBy:
+      sort_by:
         type: string
         required: false
       filter:
@@ -60,7 +60,7 @@ types:
       size:
         type: integer
         required: false
-      skipMax:
+      skip_max:
         type: integer
         required: false
     responses:
@@ -97,9 +97,9 @@ types:
   feed:patch:
   feed:delete:
 
-/transactions/{transactionId}:
+/transactions/{transaction_id}:
   uriParameters:
-    transactionId: string
+    transaction_id: string
   get:
     responses:
       200:
@@ -120,10 +120,10 @@ types:
           application/json:
             type: HyperStorageIndexCreated
 
-/indexes/{path}/{indexId}:
+/indexes/{path}/{index_id}:
   uriParameters:
     path: string
-    indexId: string
+    index_id: string
   get:
     responses:
       200:
