@@ -32,6 +32,8 @@ types:
       index_id: string
       sort_by: HyperStorageIndexSortItem[]
       filter_by?: string
+      materialize: boolean
+      unique: boolean
 
   HyperStorageIndexNew:
     type: object
@@ -39,6 +41,8 @@ types:
       index_id?: string
       sort_by: HyperStorageIndexSortItem[]
       filter_by?: string
+      materialize?: boolean
+      unique?: boolean
 
   HyperStorageIndexCreated:
     type: object
