@@ -48,6 +48,17 @@ types:
       index_id: string
       path: string
 
+  HyperStorageView:
+    type: object
+    properties:
+      template_uri: string
+      filter_by?: string
+
+  HyperStorageViewCreated:
+    type: object
+    properties:
+      path: string
+
 /content/{path}:
   uriParameters:
     path: string
@@ -132,4 +143,24 @@ types:
         body:
           application/json:
             type: HyperStorageIndex
+  delete:
+
+/views/{path}:
+  uriParameters:
+    path: string
+  put:
+    body:
+      application/json:
+        type: HyperStorageView
+    responses:
+      201:
+        body:
+          application/json:
+            type: HyperStorageViewCreated
+  get:
+    responses:
+      200:
+        body:
+          application/json:
+            type: HyperStorageView
   delete:
