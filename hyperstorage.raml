@@ -6,12 +6,19 @@ types:
     type: object
     properties:
       transaction_id: string
+      path: string
+      revision:
+        type: number
+        format: long
 
   HyperStorageTransactionCreated:
     type: object
     properties:
       transaction_id: string
       path: string
+      revision:
+        type: number
+        format: long
       target: object
 
   HyperStorageIndexSortOrder:
