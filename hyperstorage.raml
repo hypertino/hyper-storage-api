@@ -2,6 +2,15 @@
 title: HyperStorage API
 baseUri: hb://hyperstorage
 types:
+  HyperStorageHeader:
+    enum:
+      - Hyper-Storage-Transaction
+      - Hyper-Storage-Wait
+      - Hyper-Storage-TTL
+      - If-Match
+      - If-None-Match
+      - ETag
+
   HyperStorageTransaction:
     type: object
     properties:
@@ -86,6 +95,7 @@ types:
         required: false
     responses:
       200:
+      302:
   put:
     responses:
       200:
