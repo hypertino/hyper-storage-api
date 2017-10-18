@@ -81,6 +81,19 @@ types:
     properties:
       path: string
 
+  HyperStorageTemplateIndex:
+    type: object
+    properties:
+      template_uri: string
+      sort_by: HyperStorageIndexSortItem[]
+      filter_by?: string
+      materialize?: boolean
+
+  HyperStorageTemplateIndexCreated:
+    type: object
+    properties:
+      index_id: string
+
 /content/{path}:
   uriParameters:
     path: string
@@ -189,4 +202,24 @@ types:
         body:
           application/json:
             type: HyperStorageView
+  delete:
+
+/template-indexes/{index_id}:
+  uriParameters:
+    index_id: string
+  put:
+    body:
+      application/json:
+        type: HyperStorageTemplateIndex
+    responses:
+      201:
+        body:
+          application/json:
+            type: HyperStorageTemplateIndexCreated
+  get:
+    responses:
+      200:
+        body:
+          application/json:
+            type: HyperStorageTemplateIndex
   delete:
