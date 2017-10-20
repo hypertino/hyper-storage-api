@@ -53,7 +53,7 @@ types:
     properties:
       index_id: string
       sort_by: HyperStorageIndexSortItem[]
-      filter_by?: string
+      filter?: string
       materialize: boolean
 
   HyperStorageIndexNew:
@@ -61,7 +61,7 @@ types:
     properties:
       index_id?: string
       sort_by: HyperStorageIndexSortItem[]
-      filter_by?: string
+      filter?: string
       materialize?: boolean
 
   HyperStorageIndexCreated:
@@ -74,7 +74,7 @@ types:
     type: object
     properties:
       template_uri: string
-      filter_by?: string
+      filter?: string
 
   HyperStorageViewCreated:
     type: object
@@ -86,7 +86,7 @@ types:
     properties:
       template_uri: string
       sort_by: HyperStorageIndexSortItem[]
-      filter_by?: string
+      filter?: string
       materialize?: boolean
 
   HyperStorageTemplateIndexCreated:
